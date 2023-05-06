@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-
+#This is a colabrative event to get a web scraper to pull publicly known infroamtion to present in the code. 
 # URL of the website to scrape
 url = 'https://weather.com/'
 
@@ -19,4 +19,4 @@ weather_text = weather_element.text.strip()
 # Print the weather information
 print("Most Recent Weather:", weather_text)
 
-# hi
+
