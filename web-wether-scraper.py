@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 #This is a colabrative event to get a web scraper to pull publicly known infroamtion to present in the code. 
 # URL of the website to scrape
-url = 'https://weather.com/'
+url = 'https://openweathermap.org/city'
 
 # Send a GET request to the URL
 response = requests.get(url)
@@ -11,7 +11,7 @@ response = requests.get(url)
 soup = BeautifulSoup(response.text, 'html.parser')
 
 # Find the element containing the weather information
-weather_element = soup.find('div', {'class': 'weather'})
+weather_element = soup.find('div', {'class': 'weather__temperature'})
 
 # Extract the text of the weather information
 weather_text = weather_element.text.strip()
