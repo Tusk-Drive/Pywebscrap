@@ -1,11 +1,11 @@
-import requests
+from requests import get
 from bs4 import BeautifulSoup
-#This is a colabrative event to get a web scraper to pull publicly known infroamtion to present in the code. 
+#This is a collaborative event to get a web scraper to pull publicly known information to present in the code.
 # URL of the website to scrape
-url = 'https://openweathermap.org/city'
+URL = 'https://openweathermap.org/city'
 
 # Send a GET request to the URL
-response = requests.get(url)
+response = get(URL)
 
 # Create a BeautifulSoup object
 soup = BeautifulSoup(response.text, 'html.parser')
@@ -18,5 +18,3 @@ weather_text = weather_element.text.strip()
 
 # Print the weather information
 print("Most Recent Weather:", weather_text)
-
-
