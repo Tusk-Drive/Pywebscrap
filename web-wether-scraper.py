@@ -1,11 +1,11 @@
-import requests
+from requests import get
 from bs4 import BeautifulSoup
-import tkinter as tk
+from tkinter import Tk, Button, END, Toplevel, Text
 
 # Function to scrape the Fox News website and extract desired information
 def scrape_fox_news():
     # Send a GET request to the Fox News homepage
-    response = requests.get('https://www.foxnews.com/')
+    response = get('https://www.foxnews.com/')
 
     # Create a BeautifulSoup object
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -24,23 +24,23 @@ def scrape_and_display():
     scraped_data = scrape_fox_news()
 
     # Create a pop-up window
-    popup_window = tk.Toplevel(root)
+    popup_window = Toplevel(root)
     popup_window.title("Scraped Data")
 
     # Create a text widget to display the scraped data
-    text_widget = tk.Text(popup_window, height=10, width=50)
+    text_widget = Text(popup_window, height=10, width=50)
     text_widget.pack()
 
     # Insert the scraped data into the text widget
     for data in scraped_data:
-        text_widget.insert(tk.END, data + '\n')
+        text_widget.insert(END, data + '\n')
 
 # Create the main window
-root = tk.Tk()
+root = Tk()
 root.title("Web Scraper")
 
 # Create a button to trigger the scraping and display
-scrape_button = tk.Button(root, text="Scrape Fox News", command=scrape_and_display)
+scrape_button = Button(root, text="Scrape Fox News", command=scrape_and_display)
 scrape_button.pack()
 
 # Start the Tkinter event loop
