@@ -46,5 +46,6 @@ scrape_button.pack()
 # Start the Tkinter event loop
 root.mainloop()
 
-
+# Things to do later: 
+#1.Look more into how to how to give more funcinality to the program, like images and a more scoped out function of the program. 
 
