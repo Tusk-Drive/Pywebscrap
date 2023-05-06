@@ -1,7 +1,6 @@
+from tkinter import Button, Entry, Label, Tk, Toplevel, messagebox, Listbox, Scrollbar, SINGLE, END, VERTICAL, RIGHT, Y
 import requests
 from bs4 import BeautifulSoup
-import tkinter as tk
-from tkinter import messagebox, Listbox, Scrollbar, SINGLE, END, VERTICAL, RIGHT, Y
 
 
 # Function to scrape website and extract desired information
@@ -25,7 +24,7 @@ def scrape_website(url):
 # Function to display the selected content in a message box
 def show_selected_content():
     # Get the selected item from the listbox
-    selected_item = listbox.get(listbox.curselection())
+    selected_item = Listbox.get(Listbox.curselection())
 
     # Show the selected content in a message box
     messagebox.showinfo("Selected Content", selected_item)
@@ -40,7 +39,7 @@ def scrape_and_display():
     scraped_data = scrape_website(url)
 
     # Create a pop-up window
-    popup_window = tk.Toplevel(root)
+    popup_window = Toplevel(root)
     popup_window.title("Scraped Data")
 
     # Create a listbox to display the scraped data
@@ -59,23 +58,23 @@ def scrape_and_display():
         listbox.insert(END, data)
 
     # Create a button to show the selected content
-    select_button = tk.Button(popup_window, text="Select", command=show_selected_content)
+    select_button = Button(popup_window, text="Select", command=show_selected_content)
     select_button.pack()
 
 
 # Create the main window
-root = tk.Tk()
+root = Tk()
 root.title("Web Scraper")
 
 # Create an input field for the URL
-url_label = tk.Label(root, text="Enter URL:")
+url_label = Label(root, text="Enter URL:")
 url_label.pack()
 
-url_entry = tk.Entry(root, width=50)
+url_entry = Entry(root, width=50)
 url_entry.pack()
 
 # Create a button to trigger the scraping and display
-scrape_button = tk.Button(root, text="Scrape", command=scrape_and_display)
+scrape_button = Button(root, text="Scrape", command=scrape_and_display)
 scrape_button.pack()
 
 # Start the Tkinter event loop
