@@ -1,7 +1,7 @@
 from requests import get
 from bs4 import BeautifulSoup
 from tkinter import Tk, Button, END, Toplevel, Text
-# This is the updated version
+# This is the updated version 2
 
 # Function to scrape the Fox News website and extract desired information
 def scrape_fox_news():

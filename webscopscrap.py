@@ -1,7 +1,7 @@
 from tkinter import Button, Entry, Label, Tk, Toplevel, messagebox, Listbox, Scrollbar, SINGLE, END, VERTICAL, RIGHT, Y
 from requests import get
 from bs4 import BeautifulSoup
-# this is the updated version
+# this is the updated version 2
 
 
 # Function to scrape website and extract desired information
