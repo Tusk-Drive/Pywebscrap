@@ -19,8 +19,8 @@ def scrape_website(url):
     titles = [title.text.strip() for title in article_titles]
     return titles
 
-# URL of the website to scrape
-url = 'https://www.example.com'
+# URL of the website to scrape (replace with your target website URL)
+url = 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwixgaOps-H-AhU6kokEHdrlBQQQFnoECBEQAQ&url=https%3A%2F%2Fwww.foxnews.com%2F&usg=AOvVaw3hwlZRMoRSFcUYuQnc0PTS'
 
 # Call the scrape_website function with the URL
 scraped_data = scrape_website(url)
@@ -39,3 +39,4 @@ for data in scraped_data:
 
 # Start the Tkinter event loop
 root.mainloop()
+
