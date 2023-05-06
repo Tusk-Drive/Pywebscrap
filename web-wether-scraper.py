@@ -19,5 +19,4 @@ weather_text = weather_element.text.strip()
 # Print the weather information
 print("Most Recent Weather:", weather_text)
 
-
 # hi
