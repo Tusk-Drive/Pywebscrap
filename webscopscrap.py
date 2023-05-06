@@ -1,12 +1,12 @@
 from tkinter import Button, Entry, Label, Tk, Toplevel, messagebox, Listbox, Scrollbar, SINGLE, END, VERTICAL, RIGHT, Y
-import requests
+from requests import get
 from bs4 import BeautifulSoup
 
 
 # Function to scrape website and extract desired information
 def scrape_website(url):
     # Send a GET request to the URL
-    response = requests.get(url)
+    response = get(url)
 
     # Create a BeautifulSoup object
     soup = BeautifulSoup(response.text, 'html.parser')
